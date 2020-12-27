@@ -1,0 +1,23 @@
+.Box {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin: 150px auto 0;
+    width: 90%;
+}
+.code{
+  font-size: 14px;
+  margin: auto;
+}
+
+@media(min-width: 768px){
+    .Box {
+        flex-flow: nowrap;
+    }
+}
+@media(min-width: 1024px){
+    .Box {
+        width: 70%;
+    }
+}

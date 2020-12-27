@@ -1,0 +1,3 @@
+export const SET_DATA_SUMMARY = 'SET_DATA_SUMMARY';
+export const NO_RESPONSE = 'NO_RESPONSE';
+export const SERVICE_DOWN = 'SERVICE_DOWN';

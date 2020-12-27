@@ -1,0 +1,30 @@
+.Link{
+    text-align: center;
+    width: 100%;
+    color: teal;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 1px solid teal;
+    padding: 16px 0;
+}
+.Link:hover,
+.Link:active,
+.active{
+    background-color: lightgray;
+}
+
+@media(min-width: 1024px){
+    .Link{
+        border: none;
+        padding: 0;
+        width: 120px;
+        color: #FFFFFF;
+        line-height: 95px;
+    }
+    .Link:hover,
+    .Link:active,
+    .active{
+        background-color: #252b30;
+    }
+}
