@@ -7,15 +7,16 @@ import { connect } from 'react-redux';
 const PersonalInfo = (props) => {
     return (
         <Box className={classes.Box} align="start">
-            <Profile data={props.profile} 
+            {/* <Profile data={props.profile} 
                     contentName="profile" 
                     eid={props.match.params.eid} 
-                    sid={2} />
+                    sid={2} /> */}
+                    <div>Who Am I</div>
             <Box className={classes.CustomMargin}>
-                <Profile data={props.contact} 
+                {/* <Profile data={props.contact} 
                         contentName="contact" 
                         eid={props.match.params.eid}
-                        sid={3} />
+                        sid={3} /> */}
             </Box>
         </Box>
     )

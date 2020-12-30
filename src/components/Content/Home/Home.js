@@ -22,17 +22,17 @@ const Home = (props) => {
             <Card className={classes.Paper}>
                 <CardHeader
                     avatar={
-                        <Avatar>T1</Avatar>
+                        <Avatar>RF</Avatar>
                     }
                     action={
                         <IconButton><MoreVertIcon /></IconButton>
                     }
-                    title="T1 LoL (@T1LoL)"
-                    subheader="November 27, 2019"
+                    title="Richard Feynman (@ProfFeynman)"
+                    subheader="November 7, 2020"
                 />
                 <CardContent>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        Thank you, Kkoma, for the incredible 7 years.<br />Nothing we&#39;ve made so far could have been accomplished without you, we wish you all the best.<br /><br />지난 7년간 김정균 감독님이 저희와 함께 만들어간 그 모든 순간들이 행복했습니다. 감독님의 새로운 도전을 응원합니다.
+                    If you want to master something, teach it. The more you teach, the better you learn. Teaching is a powerful tool to learning.
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>

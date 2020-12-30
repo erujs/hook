@@ -24,7 +24,7 @@ class People extends React.Component {
                         <Box className={classes.Box}>
                             <ProfileCard uid={this.props.match.params.uid} />
                             <Switch>
-                                {/* <Route path="/profile/:uid" exact component={PersonalInfo} /> */}
+                                <Route path="/profile/:uid" exact component={PersonalInfo} />
                                 <Route path="/home/:uid" exact component={Home} />
                             </Switch>
                         </Box>

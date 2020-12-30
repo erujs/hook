@@ -4,7 +4,6 @@ import classes from './ProfileCard.module.scss';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import moment from 'moment';
 import { connect } from 'react-redux';
 

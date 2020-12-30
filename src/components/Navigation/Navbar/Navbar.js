@@ -16,7 +16,7 @@ const theme = createMuiTheme({
   overrides: {
     MuiAppBar: {
       colorPrimary: {
-        background: 'linear-gradient(90deg, #614385 50%, #516395 100%)'
+        background: 'linear-gradient(90deg, #0B486B 50%, #F56217 100%)'
       }
     }
   }
@@ -36,15 +36,15 @@ const Navbar = (props) => {
             </IconButton>
           </Hidden>
           <NavLink className={classes.Link}
-            exact to={"/home/" + props.eid}
+            exact to={"/home/" + props.uid}
             tabIndex="0" aria-label="people logo, link redirect to home">
             <img src={logo} className={classes.Logo} alt="logo" />
-            <code className={classes.LogoTxt}>People</code>
+            <code className={classes.LogoTxt}>Populus</code>
           </NavLink>
           <div className={classes.div}>
             <Hidden only={mobile}>
-              <NavItem link={"/home/" + props.eid} exact name="Home" />
-              <NavItem link={"/profile/" + props.eid} exact name="Profile" />
+              <NavItem link={"/home/" + props.uid} exact name="Home" />
+              <NavItem link={"/profile/" + props.uid} exact name="Profile" />
             </Hidden>
           </div>
         </Toolbar>

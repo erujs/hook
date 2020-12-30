@@ -37,11 +37,11 @@ const SideDrawer = (props) => {
           <List>
             <ListItem className={classes.ListItem}>
                 <ListItemIcon><HomeIcon /></ListItemIcon>
-                <NavItem link={"/home/" + props.eid} exact name="Home" />
+                <NavItem link={"/home/" + props.uid} exact name="Home" />
             </ListItem>
             <ListItem>
                 <ListItemIcon><PersonIcon /></ListItemIcon>
-                <NavItem link={"/profile/" + props.eid} exact name="Profile" />
+                <NavItem link={"/profile/" + props.uid} exact name="Profile" />
             </ListItem>
           </List>
         </Box>
