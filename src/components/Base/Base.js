@@ -8,7 +8,7 @@ const theme = createMuiTheme({
     overrides: {
       MuiAppBar: {
         colorPrimary: {
-          backgroundColor: '#3D4750'
+          background: 'linear-gradient(90deg, #0B486B 50%, #F56217 100%)'
         }
       }
     }
@@ -20,7 +20,7 @@ const Base = () => {
             <AppBar position="fixed">
               <Toolbar className={classes.Toolbar}>
                   <img src={logo} className={classes.Logo} alt="logo" />
-                  <code className={classes.LogoTxt}>People</code>
+                  <code className={classes.LogoTxt}>Populus</code>
               </Toolbar>
             </AppBar>
             <Box className={classes.Box}>

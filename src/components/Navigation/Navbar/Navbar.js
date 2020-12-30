@@ -38,8 +38,11 @@ const Navbar = (props) => {
           <NavLink className={classes.Link}
             exact to={"/home/" + props.uid}
             tabIndex="0" aria-label="people logo, link redirect to home">
+              <Toolbar className={classes.Toolbar}>
+
             <img src={logo} className={classes.Logo} alt="logo" />
             <code className={classes.LogoTxt}>Populus</code>
+            </Toolbar>
           </NavLink>
           <div className={classes.div}>
             <Hidden only={mobile}>
