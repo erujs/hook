@@ -57,7 +57,7 @@ const Home = (props) => {
                         Your past-times, consisted of the strange<br />And twisted and deranged<br />And I hate that little game you had called<br />Crying
                     </Typography>
                 </CardContent>
-                <img alt="post" src={require("../../../assets/red.jpg")} className={classes.img} />
+                <img alt="post" src={'https://source.unsplash.com/IeAX5I9zff0'} className={classes.img} />
                 <CardActions disableSpacing>
                     <IconButton><FavoriteIcon /></IconButton>
                     <IconButton><ShareIcon /></IconButton>
