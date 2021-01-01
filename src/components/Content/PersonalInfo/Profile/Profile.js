@@ -52,7 +52,7 @@ class Profile extends Component {
 
     dynamicFormsHandler = () => {
         let dForms = <Box className={classes.Loader} />
-        if (this.props.data !== null && this.props.data.length > 0) {
+        if (this.props.data) {
             dForms = this.props.data.map((form, key) => {
                 return (
                     this.checkEditableHandler(form, key)

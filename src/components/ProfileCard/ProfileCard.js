@@ -15,7 +15,7 @@ class ProfileCard extends Component {
         <Box className={classes.CustomWidth}>
           <Card className={classes.Card} align="center">
             <Avatar alt="Profile Image" className={classes.Avatar}
-              src={require("../../assets/" + summary.fname + ".jpg")}
+              image={"../../assets/" + summary.fname + ".jpg"}
               tabIndex="0" aria-label={"profile image"} />
             <Typography>
               <Link href="#" className={classes.Name}
