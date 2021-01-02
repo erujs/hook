@@ -47,7 +47,7 @@ class Input extends Component {
             case 1:
                 return(
                     <TextField variant="outlined" 
-                        aria-label={form.labelTXT + " input"}
+                        aria-label={form.labelTxt + " input"}
                         tabIndex="0"
                         id={'key' + key}
                         name="number"
@@ -59,7 +59,7 @@ class Input extends Component {
             case 2:
                 return(
                     <TextField variant="outlined" 
-                        aria-label={form.labelTXT + " input"}
+                        aria-label={form.labelTxt + " input"}
                         tabIndex="0"
                         id={'key' + key}
                         name="email"
@@ -71,7 +71,7 @@ class Input extends Component {
             default:
                 return(
                     <TextField variant="outlined" 
-                        aria-label={form.labelTXT + " input"}
+                        aria-label={form.labelTxt + " input"}
                         tabIndex="0"
                         id={'key' + key}
                         name="text"
@@ -101,8 +101,8 @@ class Input extends Component {
             <ThemeProvider theme={theme}>
                 <Box className={classes.Form}>
                     <Box width="50%" mr={2}>
-                        <Typography tabIndex="0" aria-label={this.props.form.labelTXT + " label"}>
-                            {this.props.form.labelTXT}
+                        <Typography tabIndex="0" aria-label={this.props.form.labelTxt + " label"}>
+                            {this.props.form.labelTxt}
                         </Typography>
                     </Box>
                     <Box width="50%">

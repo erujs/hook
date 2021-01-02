@@ -2,17 +2,24 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     status: null,
-    profileSummary: null
+    profileSummary: null,
+    profile: null
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SET_DATA_SUMMARY:
-                return {
-                    ...state,
-                    profileSummary: action.data,
-                    status: 200
-                };
+            return {
+                ...state,
+                profileSummary: action.data,
+                status: 200
+            };
+        case actionTypes.SET_DATA_PROFILE:
+            return {
+                ...state,
+                profile: action.data,
+                status: 200
+            };
         case actionTypes.SERVICE_DOWN:
             return {
                 ...state,

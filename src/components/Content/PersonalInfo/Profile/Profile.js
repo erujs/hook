@@ -29,22 +29,22 @@ class Profile extends Component {
             return { modal: !prevState.modal };
         })
     }
-    
+
     submitHandler = () => {
-        this.props.onUpdateData(this.props.eid, this.props.sid, this.props.data)
+        this.props.onUpdateData(this.props.uid, this.props.sid, this.props.data)
         this.editHandler()
         this.modalHandler()
     }
 
-    checkEditableHandler = (data, key) =>{
-        if(data.settings.editable === 1){
-            return(
+    checkEditableHandler = (data, key) => {
+        if (data.settings.editable === 1) {
+            return (
                 this.state.edit
-                ? <Input data={this.props.data} form={data} key={key} id={key} />
-                : <Text form={data} key={key} />
+                    ? <Input data={this.props.data} form={data} key={key} id={key} />
+                    : <Text form={data} key={key} />
             )
-        } else if(data.settings.editable === 0){
-            return(
+        } else if (data.settings.editable === 0) {
+            return (
                 <Text form={data} key={key} />
             )
         }
@@ -62,32 +62,32 @@ class Profile extends Component {
         let people = (
             <Paper className={classes.Paper}>
                 <Box className={classes.FormHeader}>
-                    <Typography className={classes.Info} 
+                    <Typography className={classes.Info}
                         tabIndex="0"
                         aria-label={this.props.contentName + "info header"}>
                         {this.props.contentName} info
                     </Typography>
                     <Box align="end" mt={2}>
-                    {this.state.edit ? 
-                        <ButtonGroup variant="outlined" tabIndex="0" aria-label="button group">
-                            <Button type="submit" color="primary" 
-                                tabIndex="0"
-                                aria-label="save button"
-                                startIcon={<SaveIcon />}
-                                onClick={this.submitHandler}>Save
+                        {this.state.edit ?
+                            <ButtonGroup variant="outlined" tabIndex="0" aria-label="button group">
+                                <Button type="submit" color="primary"
+                                    tabIndex="0"
+                                    aria-label="save button"
+                                    startIcon={<SaveIcon />}
+                                    onClick={this.submitHandler}>Save
                             </Button>
-                            <Button color="secondary" 
-                                tabIndex="0"
-                                aria-label="cancel button"
-                                endIcon={<CancelIcon />} 
-                                onClick={this.editHandler} ml={1}>Cancel
+                                <Button color="secondary"
+                                    tabIndex="0"
+                                    aria-label="cancel button"
+                                    endIcon={<CancelIcon />}
+                                    onClick={this.editHandler} ml={1}>Cancel
                             </Button>
-                        </ButtonGroup>
-                    :   <Button variant="outlined" color="primary" 
-                            tabIndex="0"
-                            aria-label="edit button"
-                            endIcon={<EditIcon />} 
-                            onClick={this.editHandler}>Edit
+                            </ButtonGroup>
+                            : <Button variant="outlined" color="primary"
+                                tabIndex="0"
+                                aria-label="edit button"
+                                endIcon={<EditIcon />}
+                                onClick={this.editHandler}>Edit
                         </Button>}
                     </Box>
                 </Box>
@@ -97,25 +97,25 @@ class Profile extends Component {
         return people
     }
 
-    render() { 
+    render() {
         let people = this.dynamicFormsHandler()
         return (
             <Fragment>
-                { people }
+                { people}
                 <Modal
                     aria-labelledby="simple-modal-title"
                     aria-describedby="simple-modal-description"
                     open={this.state.modal}
                     onClose={this.modalHandler}
                 >
-                  <Paper className={classes.Modal}>
+                    <Paper className={classes.Modal}>
                         <Typography>Save Success!</Typography>
-                        <Button variant="outlined" color="primary" 
+                        <Button variant="outlined" color="primary"
                             onClick={this.modalHandler}
                             tabIndex="0"
                             aria-label="save success close button">Ok
-                        </Button>
-                  </Paper>
+                          </Button>
+                    </Paper>
                 </Modal>
             </Fragment>
         );

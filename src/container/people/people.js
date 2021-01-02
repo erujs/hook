@@ -14,6 +14,7 @@ import * as peopleActions from '../../store/actions/index';
 class People extends React.Component {
     componentDidMount(){
         this.props.onInitData(this.props.match.params.uid, 1);
+        this.props.onInitData(this.props.match.params.uid, 2);
     }
     dataRender() {
         console.log(this.props.status)

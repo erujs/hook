@@ -7,6 +7,11 @@ export const setData = (data, sectionID) => {
                 type: actionTypes.SET_DATA_SUMMARY,
                 data: data,
             };
+        case 2:
+            return {
+                type: actionTypes.SET_DATA_PROFILE,
+                data: data,
+            };
         default:
             return {
                 type: actionTypes.NO_RESPONSE
@@ -34,7 +39,7 @@ export const initData = (uid, sid) => {
     };
 };
 
-export const updateData = (eid, sid, data) => {
+export const updateData = (uid, sid, data) => {
     return dispatch => {
         // $.ajax({
         //     url: 'https://localhost:44351/api/onboarding/save/'+ eid + "/" + sid,
@@ -50,5 +55,20 @@ export const updateData = (eid, sid, data) => {
         //         dispatch(serviceFailure());
         //     }
         // });
+        fetch('https://cors-anywhere.herokuapp.com/https://project-populus-default-rtdb.firebaseio.com/user/' + uid + '/' + sid + '.json', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            // dispatch(setData(data, sid))
+        })
+        .catch((error) => {
+            dispatch(serviceFailure());
+        });
     }
 }

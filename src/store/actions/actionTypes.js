@@ -1,3 +1,4 @@
 export const SET_DATA_SUMMARY = 'SET_DATA_SUMMARY';
+export const SET_DATA_PROFILE = 'SET_DATA_PROFILE';
 export const NO_RESPONSE = 'NO_RESPONSE';
 export const SERVICE_DOWN = 'SERVICE_DOWN';

@@ -23,8 +23,7 @@ const PersonalInfo = (props) => {
 
 const mapStateToProps = state => {
     return {
-        profile: state.profile,
-        contact: state.contact  
+        profile: state.profile 
     };
 }
 

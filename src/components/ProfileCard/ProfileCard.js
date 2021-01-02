@@ -9,8 +9,10 @@ import { connect } from 'react-redux';
 
 class ProfileCard extends Component {
   renderLogic = () => {
-    if (this.props.profileSummary) {
+    if (this.props.profileSummary && this.props.profile) {
       let summary = this.props.profileSummary
+      let profile = this.props.profile
+      console.log(this.props.profile)
       return (
         <Box className={classes.CustomWidth}>
           <Card className={classes.Card} align="center">
@@ -19,7 +21,7 @@ class ProfileCard extends Component {
               tabIndex="0" aria-label={"profile image"} />
             <Typography>
               <Link href="#" className={classes.Name}
-                tabIndex="0" aria-label={"display name = " + summary.dname}>{summary.dname}</Link>
+                tabIndex="0" aria-label={"display name = " + profile.dname}>{profile.dname}</Link>
             </Typography>
             <Typography>
               <Link href="#" className={classes.Role}
@@ -65,7 +67,8 @@ class ProfileCard extends Component {
 
 const mapStateToProps = state => {
   return {
-    profileSummary: state.profileSummary
+    profileSummary: state.profileSummary,
+    profile: state.profile
   }
 }
 

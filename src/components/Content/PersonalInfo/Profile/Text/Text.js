@@ -12,7 +12,7 @@ class Text extends Component {
         let textValue = 
             <Typography className={classes.Type} 
                 tabIndex="0"
-                aria-label={form.labelTXT + " value = " + form.value}>
+                aria-label={form.labelTxt + " value = " + form.value}>
                 {form.value}
             </Typography>
         switch(form.settings.element){
@@ -20,22 +20,22 @@ class Text extends Component {
                 textValue = 
                 <Typography className={classes.Type} 
                     tabIndex="0"
-                    aria-label={form.labelTXT + " value = " + form.value}>
+                    aria-label={form.labelTxt + " value = " + form.value}>
                     {moment(new Date(form.value)).format('MMMM, Do')}
                 </Typography>
             default:
                 textValue = 
                 <Typography className={classes.Type} 
                     tabIndex="0"
-                    aria-label={form.labelTXT + " value = " + form.value}>
+                    aria-label={form.labelTxt + " value = " + form.value}>
                     {form.value}
                 </Typography>
         }
         return (
             <Box className={classes.Form}>
                 <Box width="50%" mr={2}>
-                    <Typography tabIndex="0" aria-label={this.props.form.labelTXT + " label"}>
-                        {this.props.form.labelTXT}
+                    <Typography tabIndex="0" aria-label={this.props.form.labelTxt + " label"}>
+                        {this.props.form.labelTxt}
                     </Typography>
                 </Box>
                 <Box width="50%">
