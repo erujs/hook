@@ -12,17 +12,20 @@ class ProfileCard extends Component {
     if (this.props.profileSummary && this.props.profile) {
       let summary = this.props.profileSummary
       let profile = this.props.profile
-      console.log(this.props.profile)
+      console.log(profile)
+      let dname = profile.map(obj => obj.fieldName === "dname" ? 
+        <Typography>
+          <Link href="#" className={classes.Name}
+            tabIndex="0" aria-label={"display name = " + obj.value}>{obj.value}</Link>
+        </Typography>
+        : null)
       return (
         <Box className={classes.CustomWidth}>
           <Card className={classes.Card} align="center">
             <Avatar alt="Profile Image" className={classes.Avatar}
               image={"../../assets/" + summary.fname + ".jpg"}
               tabIndex="0" aria-label={"profile image"} />
-            <Typography>
-              <Link href="#" className={classes.Name}
-                tabIndex="0" aria-label={"display name = " + profile.dname}>{profile.dname}</Link>
-            </Typography>
+            {dname}
             <Typography>
               <Link href="#" className={classes.Role}
                 tabIndex="0" aria-label={"position = " + summary.position}>{summary.position}</Link>
