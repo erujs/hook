@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../../hoc/Layout/Layout';
 import { Box } from '@material-ui/core';
 import classes from './People.module.scss';
@@ -11,19 +11,18 @@ import Base from '../../components/Base/Base';
 import { connect } from 'react-redux';
 import * as peopleActions from '../../store/actions/index';
 
-class People extends React.Component {
-    componentDidMount(){
-        this.props.onInitData(this.props.match.params.uid, 1);
-        this.props.onInitData(this.props.match.params.uid, 2);
-    }
-    dataRender() {
-        console.log(this.props.status)
-        switch(this.props.status){
+const People = (props) => {
+    useEffect(() => {
+        props.onInitData(props.match.params.uid, 1);
+        props.onInitData(props.match.params.uid, 2);
+    })
+    let dataRender = () => {
+        switch(props.status){
             case 200:
                 return(
-                    <Layout uid={this.props.match.params.uid}>
+                    <Layout uid={props.match.params.uid}>
                         <Box className={classes.Box}>
-                            <ProfileCard uid={this.props.match.params.uid} />
+                            <ProfileCard uid={props.match.params.uid} />
                             <Switch>
                                 <Route path="/profile/:uid" exact component={PersonalInfo} />
                                 <Route path="/home/:uid" exact component={Home} />
@@ -41,14 +40,13 @@ class People extends React.Component {
                 return <Base />
         }
     }
-    render(){
-        let people = this.dataRender()
-        return(
-            <React.Fragment>
-                {people}
-            </React.Fragment>
-        )
-    }
+    let people = dataRender()
+
+    return(
+        <React.Fragment>
+            {people}
+        </React.Fragment>
+    )
 }
 
 const mapStateToProps = state => {

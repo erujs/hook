@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { useState, Fragment } from 'react';
 import { Box, Paper, Typography, Button, Modal, ButtonGroup } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import CancelIcon from '@material-ui/icons/Cancel';
@@ -9,38 +9,35 @@ import * as peopleActions from '../../../../store/actions/index';
 import Input from './Input/Input';
 import Text from './Text/Text';
 
-class Profile extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            edit: false,
-            modal: false
-        }
-    }
+const Profile = (props) => {
+    const [settings, setSettings] = useState({
+        edit: false,
+        modal: false
+    });
 
-    editHandler = () => {
-        this.setState((prevState) => {
-            return { edit: !prevState.edit };
+    let editHandler = () => {
+        setSettings((prevState) => {
+            return { ...settings, edit: !prevState.edit };
         })
     }
 
-    modalHandler = () => {
-        this.setState((prevState) => {
-            return { modal: !prevState.modal };
+    let modalHandler = () => {
+        setSettings((prevState) => {
+            return { ...settings, modal: !prevState.modal };
         })
     }
 
-    submitHandler = () => {
-        this.props.onUpdateData(this.props.uid, this.props.sid, this.props.data)
-        this.editHandler()
-        this.modalHandler()
+    let submitHandler = () => {
+        props.onUpdateData(props.uid, props.sid, props.data)
+        editHandler()
+        modalHandler()
     }
 
-    checkEditableHandler = (data, key) => {
+    let checkEditableHandler = (data, key) => {
         if (data.settings.editable === 1) {
             return (
-                this.state.edit
-                    ? <Input data={this.props.data} form={data} key={key} id={key} />
+                settings.edit
+                    ? <Input form={data} key={key} id={key} />
                     : <Text form={data} key={key} />
             )
         } else if (data.settings.editable === 0) {
@@ -50,76 +47,71 @@ class Profile extends Component {
         }
     }
 
-    dynamicFormsHandler = () => {
+    let dynamicFormsHandler = () => {
         let dForms = <Box className={classes.Loader} />
-        if (this.props.data) {
-            dForms = this.props.data.map((form, key) => {
+        let data = props.data
+        if (data) {
+            dForms = data[Object.keys(data)[0]].map((form, key) => {
                 return (
-                    this.checkEditableHandler(form, key)
+                    checkEditableHandler(form, key)
                 )
             })
         }
-        let people = (
+        return dForms;
+    }
+    let people = dynamicFormsHandler()
+    
+    return (
+        <Fragment>
             <Paper className={classes.Paper}>
                 <Box className={classes.FormHeader}>
                     <Typography className={classes.Info}
                         tabIndex="0"
-                        aria-label={this.props.contentName + "info header"}>
-                        {this.props.contentName} info
+                        aria-label={props.contentName + "info header"}>
+                        {props.contentName} info
                     </Typography>
                     <Box align="end" mt={2}>
-                        {this.state.edit ?
+                        {settings.edit ?
                             <ButtonGroup variant="outlined" tabIndex="0" aria-label="button group">
-                                <Button type="submit" color="primary"
+                                <Button type="submit" 
                                     tabIndex="0"
                                     aria-label="save button"
                                     startIcon={<SaveIcon />}
-                                    onClick={this.submitHandler}>Save
-                            </Button>
+                                    onClick={() => submitHandler()}>Save
+                                </Button>
                                 <Button color="secondary"
                                     tabIndex="0"
                                     aria-label="cancel button"
                                     endIcon={<CancelIcon />}
-                                    onClick={this.editHandler} ml={1}>Cancel
-                            </Button>
+                                    onClick={() => editHandler()} ml={1}>Cancel
+                                </Button>
                             </ButtonGroup>
-                            : <Button variant="outlined" color="primary"
+                            : <Button variant="outlined" 
                                 tabIndex="0"
                                 aria-label="edit button"
                                 endIcon={<EditIcon />}
-                                onClick={this.editHandler}>Edit
+                                onClick={() => editHandler()}>Edit
                         </Button>}
                     </Box>
                 </Box>
-                {dForms}
+                { people }
             </Paper>
-        )
-        return people
-    }
-
-    render() {
-        let people = this.dynamicFormsHandler()
-        return (
-            <Fragment>
-                { people}
-                <Modal
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                    open={this.state.modal}
-                    onClose={this.modalHandler}
-                >
-                    <Paper className={classes.Modal}>
-                        <Typography>Save Success!</Typography>
-                        <Button variant="outlined" color="primary"
-                            onClick={this.modalHandler}
-                            tabIndex="0"
-                            aria-label="save success close button">Ok
-                          </Button>
-                    </Paper>
-                </Modal>
-            </Fragment>
-        );
-    }
+            <Modal
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+                open={settings.modal}
+                onClose={() => modalHandler()}>
+                <Paper className={classes.Modal}>
+                    <Typography>Save Success!</Typography>
+                    <Button variant="outlined" color="primary"
+                        onClick={() => modalHandler()}
+                        tabIndex="0"
+                        aria-label="save success close button">Ok
+                      </Button>
+                </Paper>
+            </Modal>
+        </Fragment>
+    );
 }
 
 const mapDispatchToProps = dispatch => {

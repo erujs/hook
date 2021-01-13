@@ -17,7 +17,8 @@
 .Info{
     font-size: 20px !important;
     text-transform: capitalize;
-    border-bottom: 1px solid #3f51b5;
+    border-bottom: 1px solid #61dafb;
+    color: #FFFFFF;
 }
 .Icon{
     color: #FFFFFF;
@@ -26,12 +27,14 @@
     font-size: 14px !important;
     word-break: break-all;
     margin-bottom: 20px;
+    color: #FFFFFF;
 }
 .Form{
     display: flex;
     justify-content: space-between;
     min-height: 45px;
     width: 100%;
+    color: #FFFFFF;
 }
 .FormHeader{
     display: flex;

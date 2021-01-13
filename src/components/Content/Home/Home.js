@@ -26,7 +26,7 @@ const CustomCardHeader = withStyles({
     }
 })(CardHeader);
 
-const Home = (props) => {
+const Home = () => {
     return (
         <Box className={classes.Box}>
             {/* <div id="fb-root"></div>

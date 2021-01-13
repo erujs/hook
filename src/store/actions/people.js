@@ -30,7 +30,6 @@ export const initData = (uid, sid) => {
         fetch('https://cors-anywhere.herokuapp.com/https://project-populus-default-rtdb.firebaseio.com/user/' + uid + '/' + sid + '.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             dispatch(setData(data, sid))
         })
         .catch((error) => {
@@ -41,20 +40,6 @@ export const initData = (uid, sid) => {
 
 export const updateData = (uid, sid, data) => {
     return dispatch => {
-        // $.ajax({
-        //     url: 'https://localhost:44351/api/onboarding/save/'+ eid + "/" + sid,
-        //     type: 'POST',
-        //     data: JSON.stringify(data),
-        //     contentType: "application/json",
-        //     success: response => {
-        //         dispatch(setData(response, sid));
-        //         dispatch(initData(eid, 1));
-        //     },
-        //     error: error => {
-        //         console.log(error)
-        //         dispatch(serviceFailure());
-        //     }
-        // });
         fetch('https://cors-anywhere.herokuapp.com/https://project-populus-default-rtdb.firebaseio.com/user/' + uid + '/' + sid + '.json', {
             method: 'POST', // or 'PUT'
             headers: {

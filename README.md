@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- ### TODO
+
+bug: cancel still saves input values
+create main profile and view other profile
+validation cancel save
+error handling
+UI(https://jestjs.io/) UT
+crossbrowser
+
+-->
