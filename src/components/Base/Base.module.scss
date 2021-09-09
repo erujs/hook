@@ -35,14 +35,14 @@
     background-image:
         linear-gradient(
           90deg, 
-          rgba(white, 0) 0, 
-          rgba(white, .7) 50%, 
-          rgba(white, 0) 100%
+          rgba(#404040, 0) 0, 
+          rgba(#404040, .7) 50%, 
+          rgba(#404040, 0) 100%
         ),
         linear-gradient(lightgrey 17px, transparent 0),
         linear-gradient(lightgrey 17px, transparent 0),
         radial-gradient(circle 62.5px at center, lightgrey 99%, transparent 0),
-        linear-gradient(white 100%, transparent 0);
+        linear-gradient(#404040 100%, transparent 0);
 
     background-size:
         200px auto,
@@ -97,16 +97,16 @@
         background-image:
           linear-gradient(
             90deg, 
-            rgba(white, 0) 0, 
-            rgba(white, .7) 50%, 
-            rgba(white, 0) 100%
+            rgba(#404040, 0) 0, 
+            rgba(#404040, .7) 50%, 
+            rgba(#404040, 0) 100%
           ),
           linear-gradient(lightgrey 32px, transparent 0),
           linear-gradient(lightgrey 17px, transparent 0),
           linear-gradient(lightgrey 17px, transparent 0),
           linear-gradient(lightgrey 17px, transparent 0),
           linear-gradient(lightgrey 17px, transparent 0),
-          linear-gradient(white 100%, transparent 0);
+          linear-gradient(#404040 100%, transparent 0);
     
         background-size:
           200px auto,
@@ -163,4 +163,9 @@
     .Box {
         width: 70%;
     }
+}
+@media(min-width: 2560px){
+  .Box {
+      width: 35%;
+  }
 }
