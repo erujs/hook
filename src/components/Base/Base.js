@@ -1,10 +1,13 @@
 import React from 'react';
 import classes from './Base.module.scss';
-import { Box, Card, AppBar, Toolbar } from '@material-ui/core';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 import logo from '../../logo.svg';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const theme = createMuiTheme({
+const theme = createTheme({
     overrides: {
       MuiAppBar: {
         colorPrimary: {

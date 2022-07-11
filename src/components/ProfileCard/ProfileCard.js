@@ -1,18 +1,26 @@
-import React from 'react';
-import { Box, Card, Typography, Avatar, Link, Divider } from '@material-ui/core';
+import React, { useContext } from 'react';
+import { PeopleProvider } from '../../contexts/people.context';
+
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import Link from '@mui/material/Link';
+import Divider from '@mui/material/Divider';
 import classes from './ProfileCard.module.scss';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import moment from 'moment';
-import { connect } from 'react-redux';
 
 const ProfileCard = (props) => {
+  const [people] = useContext(PeopleProvider);
+
   let renderLogic = () => {
-    if (props.profileSummary && props.profile) {
-      let profile = props.profile
-      let profileSummary = props.profileSummary
-      let dname = profile[Object.keys(profile)[0]].map((obj, key) => obj.fieldName === "dname" ? 
+    if (people.profileSummary && people.profile) {
+      let profile = people.profile
+      let profileSummary = people.profileSummary
+      let dname = profile[Object.keys(profile)[0]].map((obj, key) => obj.fieldName === "dname" ?
         <Typography>
           <Link href="#" className={classes.Name}
             tabIndex="0" aria-label={"display name = " + obj.value}>{obj.value}</Link>
@@ -65,11 +73,4 @@ const ProfileCard = (props) => {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    profileSummary: state.profileSummary,
-    profile: state.profile
-  }
-}
-
-export default connect(mapStateToProps)(ProfileCard);
+export default ProfileCard;

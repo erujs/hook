@@ -1,7 +1,8 @@
 import React from 'react';
-import { Typography, Box } from '@material-ui/core';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import moment from 'moment';
-import classes from '../../../Content.module.scss';
+import classes from '../../../content.module.scss';
 
 const Text = (props) => {
     let formHandler = () => {

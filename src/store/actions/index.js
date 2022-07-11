@@ -1,1 +1,0 @@
-export { initData, updateData } from './people';

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { TextField, Box, Typography } from '@material-ui/core';
-import classes from '../../../Content.module.scss';
-import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import classes from '../../../content.module.scss';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const theme = createMuiTheme({
+const theme = createTheme({
     overrides: {
         MuiOutlinedInput: {
             input: {
@@ -21,24 +23,24 @@ const Input = (props) => {
     })
 
     let validate = (name, value) => {
-        switch(name) {
+        switch (name) {
             case 'text':
-                if(value.trim() !== ''){
+                if (value.trim() !== '') {
                     return true
                 };
-            break;
+                break;
             case 'email':
                 const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-                if(pattern.test(value)){
-                  return true
-                };
-            break;
-            case 'number':
-                const regexr = /[\d()x-]/;
-                if(regexr.test(value)){
+                if (pattern.test(value)) {
                     return true
                 };
-            break;
+                break;
+            case 'number':
+                const regexr = /[\d()x-]/;
+                if (regexr.test(value)) {
+                    return true
+                };
+                break;
             default:
                 return false;
         }
@@ -47,16 +49,16 @@ const Input = (props) => {
     let changeHandler = (event) => {
         let data = props.form
         let valid = validate(event.target.name, event.target.value);
-        setValidation({...validation, [event.target.name]: valid})
+        setValidation({ ...validation, [event.target.name]: valid })
         data.value = event.target.value;
     }
-    
+
     let inputHandler = (form, key) => {
         let textField = null;
-        switch(form.settings.element){
+        switch (form.settings.element) {
             case 1:
-                textField = 
-                    <TextField variant="outlined" 
+                textField =
+                    <TextField variant="outlined"
                         aria-label={form.labelTxt + " input"}
                         tabIndex="0"
                         id={'key' + key}
@@ -65,10 +67,10 @@ const Input = (props) => {
                         defaultValue={form.value}
                         onChange={changeHandler.bind(this)}
                     />
-            break;
+                break;
             case 2:
-                textField = 
-                    <TextField variant="outlined" 
+                textField =
+                    <TextField variant="outlined"
                         aria-label={form.labelTxt + " input"}
                         tabIndex="0"
                         id={'key' + key}
@@ -77,10 +79,10 @@ const Input = (props) => {
                         defaultValue={form.value}
                         onChange={changeHandler.bind(this)}
                     />
-            break;
+                break;
             default:
-                textField = 
-                    <TextField variant="outlined" 
+                textField =
+                    <TextField variant="outlined"
                         aria-label={form.labelTxt + " input"}
                         tabIndex="0"
                         id={'key' + key}
@@ -94,7 +96,7 @@ const Input = (props) => {
     }
     let input = inputHandler(props.form, props.id)
 
-    return(
+    return (
         <ThemeProvider theme={theme}>
             <Box className={classes.Form}>
                 <Box width="50%" mr={2}>

@@ -1,15 +1,22 @@
-import React, { useState, Fragment } from 'react';
-import { Box, Paper, Typography, Button, Modal, ButtonGroup } from '@material-ui/core';
-import EditIcon from '@material-ui/icons/Edit';
-import CancelIcon from '@material-ui/icons/Cancel';
-import SaveIcon from '@material-ui/icons/Save';
-import classes from '../../Content.module.scss';
-import { connect } from 'react-redux';
-import * as peopleActions from '../../../../store/actions/index';
+import React, { useState, useContext } from 'react';
+import { PeopleProvider } from '../../../../contexts/people.context';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import EditIcon from '@mui/icons-material/Edit';
+import CancelIcon from '@mui/icons-material/Cancel';
+import SaveIcon from '@mui/icons-material/Save';
+import classes from '../../content.module.scss';
+// import * as peopleActions from '../../../../store/actions/index';
 import Input from './Input/Input';
 import Text from './Text/Text';
 
 const Profile = (props) => {
+    const [dispatch] = useContext(PeopleProvider);
+
     const [settings, setSettings] = useState({
         edit: false,
         modal: false
@@ -28,7 +35,7 @@ const Profile = (props) => {
     }
 
     let submitHandler = () => {
-        props.onUpdateData(props.uid, props.sid, props.data)
+        // props.onUpdateData(props.uid, props.sid, props.data)
         editHandler()
         modalHandler()
     }
@@ -60,9 +67,9 @@ const Profile = (props) => {
         return dForms;
     }
     let people = dynamicFormsHandler()
-    
+
     return (
-        <Fragment>
+        <>
             <Paper className={classes.Paper}>
                 <Box className={classes.FormHeader}>
                     <Typography className={classes.Info}
@@ -73,7 +80,7 @@ const Profile = (props) => {
                     <Box align="end" mt={2}>
                         {settings.edit ?
                             <ButtonGroup variant="outlined" tabIndex="0" aria-label="button group">
-                                <Button type="submit" 
+                                <Button type="submit"
                                     tabIndex="0"
                                     aria-label="save button"
                                     startIcon={<SaveIcon />}
@@ -86,15 +93,15 @@ const Profile = (props) => {
                                     onClick={() => editHandler()} ml={1}>Cancel
                                 </Button>
                             </ButtonGroup>
-                            : <Button variant="outlined" 
+                            : <Button variant="outlined"
                                 tabIndex="0"
                                 aria-label="edit button"
                                 endIcon={<EditIcon />}
                                 onClick={() => editHandler()}>Edit
-                        </Button>}
+                            </Button>}
                     </Box>
                 </Box>
-                { people }
+                {people}
             </Paper>
             <Modal
                 aria-labelledby="simple-modal-title"
@@ -107,17 +114,11 @@ const Profile = (props) => {
                         onClick={() => modalHandler()}
                         tabIndex="0"
                         aria-label="save success close button">Ok
-                      </Button>
+                    </Button>
                 </Paper>
             </Modal>
-        </Fragment>
+        </>
     );
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onUpdateData: (eid, sid, data) => dispatch(peopleActions.updateData(eid, sid, data))
-    }
-}
-
-export default connect(null, mapDispatchToProps)(Profile);
+export default Profile;

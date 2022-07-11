@@ -1,18 +1,16 @@
 import React from 'react';
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Hidden
-} from '@material-ui/core';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
+import { NavLink } from "react-router-dom";
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Hidden from '@mui/material/Hidden';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../../logo.svg';
 import classes from './Navbar.module.scss';
 import NavItem from './NavItem/NavItem';
-import { NavLink } from "react-router-dom";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   overrides: {
     MuiAppBar: {
       colorPrimary: {
@@ -36,7 +34,7 @@ const Navbar = (props) => {
             </IconButton>
           </Hidden>
           <NavLink className={classes.Link}
-            exact to={"/home/" + props.uid}
+            to={"/home/" + props.uid}
             tabIndex="0" aria-label="people logo, link redirect to home">
           <Toolbar className={classes.Toolbar}>
             <img src={logo} className={classes.Logo} alt="logo" />
@@ -45,8 +43,8 @@ const Navbar = (props) => {
           </NavLink>
           <div className={classes.div}>
             <Hidden only={mobile}>
-              <NavItem link={"/home/" + props.uid} exact name="Home" />
-              <NavItem link={"/profile/" + props.uid} exact name="Profile" />
+              <NavItem link={"/home/" + props.uid} name="Home" />
+              <NavItem link={"/profile/" + props.uid} name="Profile" />
             </Hidden>
           </div>
         </Toolbar>

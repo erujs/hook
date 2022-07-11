@@ -1,16 +1,20 @@
-import React from 'react';
-import { Box } from '@material-ui/core';
-import classes from '../Content.module.scss';
+import React, { useContext } from 'react';
+import { PeopleProvider } from '../../../contexts/people.context';
+import { useParams } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import classes from '../content.module.scss';
 import Profile from './Profile/Profile';
-import { connect } from 'react-redux';
 
 const PersonalInfo = (props) => {
+    const [people] = useContext(PeopleProvider);
+    let { uid } = useParams();
+
     return (
         <Box className={classes.Box} align="start">
-            <Profile data={props.profile} 
-                    contentName="profile" 
-                    uid={props.match.params.uid} 
-                    sid={2} />
+            <Profile data={people.profile}
+                contentName="profile"
+                uid={uid}
+                sid={2} />
             <Box className={classes.CustomMargin}>
                 {/* <Profile data={props.contact} 
                         contentName="contact" 
@@ -21,10 +25,4 @@ const PersonalInfo = (props) => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        profile: state.profile 
-    };
-}
-
-export default connect(mapStateToProps)(PersonalInfo);
+export default PersonalInfo;
