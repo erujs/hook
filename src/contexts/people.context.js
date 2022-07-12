@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const PeopleProvider = createContext();
 export const PeopleStm = ({ children }) => {
     const [people, setPeople] = useState({
-        status: null,
+        status: 200,
         profileSummary: null,
         profile: null
     });
