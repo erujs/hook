@@ -4,7 +4,7 @@ import { PeopleProvider } from '../../contexts/people.context';
 import { PeopleService } from '../../services/people.service';
 import Error from '../../pages/error/error.view';
 // import Layout from '../../hoc/Layout/Layout';
-import { Container, Card, Icon, Image } from 'semantic-ui-react'
+import { Placeholder, Container } from 'semantic-ui-react'
 import classes from './people.module.scss';
 // import ProfileCard from '../../components/ProfileCard/ProfileCard';
 // import PersonalInfo from '../../components/Content/PersonalInfo/PersonalInfo';
@@ -36,24 +36,18 @@ const People = () => {
                                 <Route path="/profile/*" element={<PersonalInfo />} />
                                 <Route path="/home/*" element={<Home />} />
                             </Routes> */}
-                        <Card>
-                            <Image src='https://images.unsplash.com/photo-1612271974453-15e684c6586b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80' wrapped ui={false} />
-                            <Card.Content>
-                                <Card.Header>MJ</Card.Header>
-                                <Card.Meta>
-                                    <span className='date'>Joined in 2020</span>
-                                </Card.Meta>
-                                <Card.Description>
-                                    Lorem Ipsum
-                                </Card.Description>
-                            </Card.Content>
-                            <Card.Content extra>
-                                <a>
-                                    <Icon name='user' />
-                                    22 Friends
-                                </a>
-                            </Card.Content>
-                        </Card>
+                        <Placeholder>
+                            <Placeholder.Header image>
+                                <Placeholder.Line />
+                                <Placeholder.Line />
+                            </Placeholder.Header>
+                            <Placeholder.Paragraph>
+                                <Placeholder.Line />
+                                <Placeholder.Line />
+                                <Placeholder.Line />
+                                <Placeholder.Line />
+                            </Placeholder.Paragraph>
+                        </Placeholder>
                     </Container>
                     // </Layout>
                 )
