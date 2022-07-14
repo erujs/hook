@@ -6,7 +6,7 @@ import Error from '../../pages/error/error.view';
 // import Layout from '../../hoc/Layout/Layout';
 import { Placeholder, Container } from 'semantic-ui-react'
 import classes from './people.module.scss';
-// import ProfileCard from '../../components/ProfileCard/ProfileCard';
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
 // import PersonalInfo from '../../components/Content/PersonalInfo/PersonalInfo';
 // import Home from '../../components/Content/Home/Home';
 // import Base from '../../components/Base/Base';
@@ -36,6 +36,7 @@ const People = () => {
                                 <Route path="/profile/*" element={<PersonalInfo />} />
                                 <Route path="/home/*" element={<Home />} />
                             </Routes> */}
+                        <ProfileCard uid={uid} />
                         <Placeholder>
                             <Placeholder.Header image>
                                 <Placeholder.Line />
