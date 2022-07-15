@@ -1,28 +1,55 @@
-.Box {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-between;
-    text-align: center;
-    margin: auto auto 0;
-    width: 90%;
+.segment {
+    display: flex !important;
+    flex-flow: nowrap !important;
+    justify-content: space-between !important;
+    // text-align: center !important;
+    padding: 0 !important;
+    margin: auto auto 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
 }
-.code{
-  font-size: 14px;
-  margin: auto;
+
+.profile {
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+.image {
+    margin: auto !important;
+    height: auto !important;
+    :hover{
+      opacity: .5;
+    }
+}
+
+.wall {
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
 }
 
 @media(min-width: 768px){
-    .Box {
-        flex-flow: nowrap;
+    .profile {
+        width: 300px !important;
+    }
+    .wall {
+        width: calc(100% - 300px) !important;
+        margin: 0 0 0 20px !important;
+    }
+    .segment {
+        flex-flow: nowrap !important;
     }
 }
 @media(min-width: 1024px){
-    .Box {
-        width: 70%;
+    .segment {
+        width: 70% !important;
     }
 }
 @media(min-width: 2560px){
-    .Box {
-        width: 35%;
+    .segment {
+        width: 35% !important;
     }
 }
