@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { PeopleStm } from './contexts/people.context';
+import { PeopleProvider } from './contexts/people.context';
 import Error from './pages/error/error.view';
 import People from './pages/people/people.view';
 
 const App = () => {
   return (
     <div className="App">
-      <PeopleStm>
+      <PeopleProvider>
         <Router>
           <Routes>
             {/* <Route path="/" element={() => <Navigate to="/home/Jerus" />} /> */}
@@ -17,7 +17,7 @@ const App = () => {
             <Route path='*' element={<Error errorcode={"[404] Page Not Found!"} />} />
           </Routes>
         </Router>
-      </PeopleStm>
+      </PeopleProvider>
     </div>
   );
 }

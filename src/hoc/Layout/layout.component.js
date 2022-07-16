@@ -22,7 +22,6 @@ const Layout = (props) => {
         <>
             <Menu size='massive' inverted className={classes.menu}>
                 <Menu.Item name='Populus' icon='react' />
-
                 <Menu.Menu position='right'>
                     <Menu.Item
                         name='home'

@@ -1,7 +1,8 @@
 import { createContext, useState } from "react";
 
-export const PeopleProvider = createContext();
-export const PeopleStm = ({ children }) => {
+export const PeopleContext = createContext();
+
+export const PeopleProvider = ({ children }) => {
     const [people, setPeople] = useState({
         status: 200,
         profileSummary: null,
@@ -38,14 +39,13 @@ export const PeopleStm = ({ children }) => {
                     status: 204
                 })
                 break;
-
             // no default
         }
     }
 
     return <>
-        <PeopleProvider.Provider value={[people, dispatch]}>
+        <PeopleContext.Provider value={[people, dispatch]}>
             {children}
-        </PeopleProvider.Provider>
+        </PeopleContext.Provider>
     </>
 }

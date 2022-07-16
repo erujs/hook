@@ -1,6 +1,11 @@
 .menu {
+    border: 0 !important;
     border-radius: 0 !important;
     margin: 0 !important;
+    // background: linear-gradient(90deg, #0B486B 50%, #F56217 100%) !important;
+    background: #1c1e21 !important;
+    color: white !important;
+    height: 5rem !important;
     // position: fixed !important;
     // top: 0 !important;
     // width: 100% !important;
@@ -21,12 +26,12 @@
     margin: 0 !important;
     border-radius: 0 !important;
     border: 0 !important;
-    height: 100vh;
+    height: calc(100vh - 5rem);
 }
 
 .pusher {
     padding-top: 4rem;
-    background-color: lightgray !important;
+    background-color: #1c1e21 !important;
 }
 
 /* Mobile */
