@@ -11,7 +11,7 @@ const App = () => {
         <Router>
           <Routes>
             {/* <Route path="/" element={() => <Navigate to="/home/Jerus" />} /> */}
-            <Route path="/*" element={<Navigate replace to="/home/Jerus" />} />
+            <Route path="/" element={<Navigate replace to="/home/Jerus" />} />
             <Route path="/home/:uid" element={<People />} />
             {/* <Route path="/profile/:uid" element={<People />} /> */}
             <Route path='*' element={<Error errorcode={"[404] Page Not Found!"} />} />

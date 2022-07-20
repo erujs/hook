@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../../logo.svg';
-import '../../App.css';
+import '../../App.scss';
 
-const AppErr = (props) => {
+const Error = (props) => {
     return (
         <div className="App">
             <header className="App-header">
@@ -29,4 +29,4 @@ const AppErr = (props) => {
     )
 }
 
-export default AppErr;
+export default Error;

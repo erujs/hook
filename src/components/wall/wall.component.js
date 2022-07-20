@@ -1,113 +1,131 @@
 import React from "react";
-import { Segment, Feed, Icon } from "semantic-ui-react";
+import { Segment, Form, TextArea, Image, Header, Button, Divider } from "semantic-ui-react";
 import classes from "./wall.module.scss";
 
 const Wall = () => {
     return (
-        <Segment className={classes.wall}>
-            <Feed>
-                <Feed.Event>
-                    <Feed.Label>
-                        <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
-                    </Feed.Label>
-                    <Feed.Content>
-                        <Feed.Summary>
-                            <Feed.User>Elliot Fu</Feed.User> added you as a friend
-                            <Feed.Date>1 Hour Ago</Feed.Date>
-                        </Feed.Summary>
-                        <Feed.Meta>
-                            <Feed.Like>
-                                <Icon name="like" />4 Likes
-                            </Feed.Like>
-                        </Feed.Meta>
-                    </Feed.Content>
-                </Feed.Event>
+        <>
+            {/* move to another component */}
+            <Segment className={classes.wall}>
+                <Form>
+                    <Form.Field
+                        id='form-textarea-control-opinion'
+                        control={TextArea}
+                        placeholder='Opinion'
+                    />
+                    <Button basic fluid color='blue'>
+                        Post
+                    </Button>
+                </Form>
+            </Segment>
 
-                <Feed.Event>
-                    <Feed.Label image="/images/avatar/small/helen.jpg" />
-                    <Feed.Content>
-                        <Feed.Summary>
-                            <a>Helen Troy</a> added <a>2 new illustrations</a>
-                            <Feed.Date>4 days ago</Feed.Date>
-                        </Feed.Summary>
-                        <Feed.Extra images>
-                            <a>
-                                <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
-                            </a>
-                            <a>
-                                <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
-                            </a>
-                        </Feed.Extra>
-                        <Feed.Meta>
-                            <Feed.Like>
-                                <Icon name="like" />1 Like
-                            </Feed.Like>
-                        </Feed.Meta>
-                    </Feed.Content>
-                </Feed.Event>
-
-                <Feed.Event>
-                    <Feed.Label image="/images/avatar/small/jenny.jpg" />
-                    <Feed.Content>
-                        <Feed.Summary
-                            date="2 Days Ago"
-                            user="Jenny Hess"
-                            content="add you as a friend"
-                        />
-                        <Feed.Meta>
-                            <Feed.Like>
-                                <Icon name="like" />8 Likes
-                            </Feed.Like>
-                        </Feed.Meta>
-                    </Feed.Content>
-                </Feed.Event>
-
-                <Feed.Event>
-                    <Feed.Label image="/images/avatar/small/joe.jpg" />
-                    <Feed.Content>
-                        <Feed.Summary>
-                            <a>Joe Henderson</a> posted on his page
-                            <Feed.Date>3 days ago</Feed.Date>
-                        </Feed.Summary>
-                        <Feed.Extra text>
-                            Ours is a life of constant reruns. We"re always circling back to where
-                            we"d we started, then starting all over again. Even if we don"t run
-                            extra laps that day, we surely will come back for more of the same
-                            another day soon.
-                        </Feed.Extra>
-                        <Feed.Meta>
-                            <Feed.Like>
-                                <Icon name="like" />5 Likes
-                            </Feed.Like>
-                        </Feed.Meta>
-                    </Feed.Content>
-                </Feed.Event>
-
-                <Feed.Event>
-                    <Feed.Label image="/images/avatar/small/justen.jpg" />
-                    <Feed.Content>
-                        <Feed.Summary>
-                            <a>Justen Kitsune</a> added <a>2 new photos</a> of you
-                            <Feed.Date>4 days ago</Feed.Date>
-                        </Feed.Summary>
-                        <Feed.Extra images>
-                            <a>
-                                <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
-                            </a>
-                            <a>
-                                <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
-                            </a>
-                        </Feed.Extra>
-                        <Feed.Meta>
-                            <Feed.Like>
-                                <Icon name="like" />
-                                41 Likes
-                            </Feed.Like>
-                        </Feed.Meta>
-                    </Feed.Content>
-                </Feed.Event>
-            </Feed>
-        </Segment>
+            <Segment.Group className={classes.wall}>
+                <Segment inverted>
+                    <Header as='h2'>
+                        <Image circular src={require('../assets/Jerus.jpg')} /> Richard Feynman (@ProfFeynman)
+                    </Header>
+                </Segment>
+                <Segment inverted>
+                    If you want to master something, teach it. The more you teach, the better you learn. Teaching is a powerful tool to learning.
+                </Segment>
+                <Segment inverted>
+                    <Button
+                        basic
+                        color='red'
+                        content='Like'
+                        icon='heart'
+                        label={{
+                            basic: true,
+                            color: 'red',
+                            pointing: 'left',
+                            content: '2,048',
+                        }}
+                    />
+                    <Button
+                        basic
+                        color='blue'
+                        content='Share'
+                        icon='fork'
+                        label={{
+                            basic: true,
+                            color: 'blue',
+                            pointing: 'left',
+                            content: '2,048',
+                        }}
+                    />
+                </Segment>
+                <Divider />
+                <Segment inverted>
+                    <Header as='h2'>
+                        <Image circular src={require('../assets/red.jpg')} /> Je (@Saez_uri)
+                    </Header>
+                </Segment>
+                <Segment inverted>
+                    Your past-times, consisted of the strange<br />And twisted and deranged<br />And I hate that little game you had called<br />Crying
+                </Segment>
+                <Segment inverted>
+                    <Button
+                        basic
+                        color='red'
+                        content='Like'
+                        icon='heart'
+                        label={{
+                            basic: true,
+                            color: 'red',
+                            pointing: 'left',
+                            content: '6969',
+                        }}
+                    />
+                    <Button
+                        basic
+                        color='blue'
+                        content='Share'
+                        icon='fork'
+                        label={{
+                            basic: true,
+                            color: 'blue',
+                            pointing: 'left',
+                            content: '69',
+                        }}
+                    />
+                </Segment>
+                <Divider />
+                <Segment inverted>
+                    <Header as='h2'>
+                        <Image circular src={require('../assets/Jhassel.jpg')} /> Lorem Ipsum (@LoremIpsum)
+                    </Header>
+                </Segment>
+                <Segment inverted>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et enim gravida, semper justo nec, scelerisque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam auctor felis nec velit bibendum sodales. Proin viverra, nunc vel pretium imperdiet, lorem est consectetur mi, non gravida justo eros et augue. Curabitur vehicula dui urna, mattis lobortis turpis vestibulum vitae. Proin vel diam dapibus, facilisis ante gravida, aliquet urna. Pellentesque hendrerit, erat id consectetur porta, ex mi ullamcorper arcu, eu faucibus eros leo at lacus. Vestibulum posuere magna enim, non molestie velit facilisis vitae. Cras erat sem, vulputate nec ipsum ac, maximus pellentesque diam.
+                </Segment>
+                <Segment inverted>
+                    <Button
+                        basic
+                        color='red'
+                        content='Like'
+                        icon='heart'
+                        label={{
+                            basic: true,
+                            color: 'red',
+                            pointing: 'left',
+                            content: '1234',
+                        }}
+                    />
+                    <Button
+                        basic
+                        color='blue'
+                        content='Share'
+                        icon='fork'
+                        label={{
+                            basic: true,
+                            color: 'blue',
+                            pointing: 'left',
+                            content: '123',
+                        }}
+                    />
+                </Segment>
+            </Segment.Group>
+        </>
     )
 }
 

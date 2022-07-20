@@ -17,15 +17,10 @@
     border-radius: 5;
 }
 
-.segment:nth-child(4) {
-    text-align: center !important;
-}
-
 .image {
-    height: 300px !important;
-    width: 100% !important;
-    // border-radius: 500em !important;
-    margin: auto !important;
+    height: 270px;
+    width: 100%;
+    border-radius: 500em;
     :hover{
       opacity: .5;
     }

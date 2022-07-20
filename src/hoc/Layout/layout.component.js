@@ -3,10 +3,7 @@ import React, { useState } from 'react';
 // import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import {
     Checkbox,
-    Grid,
-    Header,
     Icon,
-    Image,
     Menu,
     Button,
     Segment,
@@ -49,7 +46,7 @@ const Layout = (props) => {
                     </Menu.Item>
                 </Menu.Menu>
             </Menu>
-            <Sidebar.Pushable as={Segment} className={classes.sidebar}>
+            <Sidebar.Pushable as={Segment} className={classes.sidebar} inverted>
                 <Sidebar
                     as={Menu}
                     animation='overlay'

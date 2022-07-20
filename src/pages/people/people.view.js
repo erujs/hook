@@ -6,7 +6,7 @@ import Error from "../../pages/error/error.view";
 import Layout from "../../hoc/Layout/layout.component";
 import Profile from "../../components/profile/profile.component";
 import Wall from "../../components/wall/wall.component";
-import { Grid, Segment } from "semantic-ui-react"
+import { Grid } from "semantic-ui-react"
 
 const People = () => {
     const [people, dispatch] = useContext(PeopleContext);
@@ -22,10 +22,11 @@ const People = () => {
         })
     }, [])
 
-    let dataRender = () => {
+    let pageRender = () => {
         switch (people.status) {
             case 200:
                 return (
+                    // use link from react-router-dom
                     <Layout uid={uid}>
                         <Grid columns={2} padded="vertically" stackable container>
                             <Grid.Column width={5}>
@@ -48,7 +49,7 @@ const People = () => {
         }
     }
 
-    return dataRender()
+    return pageRender();
 }
 
 export default People;
