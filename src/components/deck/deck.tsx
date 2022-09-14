@@ -3,6 +3,7 @@ import { useSprings, animated } from '@react-spring/web'
 import useMeasure from 'react-use-measure'
 import { useDrag } from 'react-use-gesture'
 import clamp from 'lodash.clamp'
+import Details from '../details/details'
 
 import styles from './deck.module.css'
 
@@ -43,7 +44,9 @@ const Deck:FC = () => {
     <div ref={ref} className={styles.wrapper}>
       {props.map(({ x, display, scale }, i) => (
         <animated.div className={styles.page} {...bind()} key={i} style={{ display, x }}>
-          <animated.div style={{ scale, backgroundImage: `url(${pages[i]})` }} />
+          <animated.div style={{ scale, backgroundImage: `url(${pages[i]})` }}>
+            <Details />
+          </animated.div>
         </animated.div>
       ))}
     </div>

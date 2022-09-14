@@ -24,9 +24,9 @@ const Home: FC = () => {
   return (
     // {componentRender()}
     // <div className={styles.container}>
-    //   <Deck />
+      <Deck />
     // </div>
-    <Profile />
+    // <Profile />
   )
 }
 
