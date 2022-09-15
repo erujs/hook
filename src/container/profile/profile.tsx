@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Details from '../../components/details/details';
+import Data from '../../components/data/data';
 // import bg from '../../assets/anthony-tran.jpg'
 
 const Profile: FC = () => {
@@ -8,7 +8,7 @@ const Profile: FC = () => {
     <div className="bg-gradient-to-r from-cyan-500 to-blue-500">
       <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
 
-          <Details />
+          <Data />
 
       </div>
     </div>
