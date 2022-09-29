@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
+        {/* <h1 className="text-6xl font-bold">
           Welcome to{' '}
           <a className="text-blue-600" href="https://nextjs.org">
             Next.js!
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
 
         <h1>The value of count is {count}</h1>
         <button onClick={() => dispatch(increment())} className='w-full h-10 bg-green-400/50'>
