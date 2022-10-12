@@ -3,17 +3,19 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from './store'
 
 export interface Reducer {
+  status: number,
   value: number,
   pages: string[],
 }
 
 const initialState: Reducer = {
+  status: 200,
   value: 0,
   pages: [
-    'https://images.pexels.com/photos/62689/pexels-photo-62689.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    'https://images.pexels.com/photos/4016596/pexels-photo-4016596.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    'https://images.pexels.com/photos/351265/pexels-photo-351265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    'https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    'https://source.unsplash.com/F6VAZuBFZpc',
+    'https://source.unsplash.com/DZkDkaiHdTU',
+    'https://source.unsplash.com/dcZsxUAAJXs',
+    'https://source.unsplash.com/zgC7nqgE7uw',
   ]
 }
 
@@ -42,5 +44,6 @@ export const { increment, decrement, incrementByAmount } = reducer.actions
 
 export const selectValue = (state: RootState) => state.data.value
 export const selectPages = (state: RootState) => state.data.pages
+export const getStatus = (state: RootState) => state.data.status
 
 export default reducer.reducer

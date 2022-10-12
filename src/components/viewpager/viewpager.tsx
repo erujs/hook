@@ -7,9 +7,9 @@ import clamp from 'lodash.clamp'
 import { useSelector } from 'react-redux'
 import { selectPages } from '../../app/reducer';
 
-import styles from './deck.module.css'
+import styles from './viewpager.module.css'
 
-const Deck = () => {
+const ViewPager = () => {
   const pages = useSelector(selectPages);
 
   const index = useRef(0)
@@ -36,7 +36,7 @@ const Deck = () => {
     })
   })
   return (
-    <div ref={ref} className={styles.wrapper}>
+    <div ref={ref} className="h-full w-full">
       {props.map(({ x, display, scale }, i) => (
         <animated.div className={styles.page} {...bind()} key={i} style={{ display, x }}>
           <animated.div style={{ scale, backgroundImage: `url(${pages[i]})` }}>
@@ -48,4 +48,4 @@ const Deck = () => {
   )
 }
 
-export default Deck;
+export default ViewPager;
