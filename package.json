@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.12",
     "@react-spring/web": "^9.5.5",
     "@reduxjs/toolkit": "^1.8.5",
     "lodash.clamp": "^4.0.3",
