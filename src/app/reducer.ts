@@ -2,15 +2,42 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from './store'
 
+interface Profile {
+  picture: string,
+  username: string,
+  occupation: string,
+  location: string,
+  description: string,
+  links: object[]
+}
+
 export interface Reducer {
   status: number,
   value: number,
+  profile: Profile,
   pages: string[],
 }
 
 const initialState: Reducer = {
   status: 200,
   value: 0,
+  profile: {
+    picture: 'https://source.unsplash.com/wgDyTXJm-lU',
+    username: 'eru-js',
+    occupation: 'Software Engineer',
+    location: 'Upside Down',
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat expedita eum beatae praesentium cumque deleniti rerum necessitatibus quibusdam nesciunt ut culpa ratione, officia fugit possimus harum recusandae nobis quidem architecto?',
+    links: [
+      {
+        "link": "telegram",
+        "url": "#"
+      },
+      {
+        "link": "discord",
+        "url": "#"
+      }
+    ]
+  },
   pages: [
     'https://source.unsplash.com/F6VAZuBFZpc',
     'https://source.unsplash.com/DZkDkaiHdTU',
@@ -43,6 +70,7 @@ export const reducer = createSlice({
 export const { increment, decrement, incrementByAmount } = reducer.actions
 
 export const selectValue = (state: RootState) => state.data.value
+export const getProfile = (state: RootState) => state.data.profile
 export const selectPages = (state: RootState) => state.data.pages
 export const getStatus = (state: RootState) => state.data.status
 

@@ -1,19 +1,12 @@
-import styles from './eru.module.css';
-
 const Eru = () => {
-  const handleClick = () => {
-    window.open('https://github.com/Eru-js');
-  };
-
   return (
-    <div className={styles.div} onClick={handleClick}>
-      <code
-      className={[styles.code, styles.dark].join(' ')}
-      // className={[styles.code, color === 'dark' ? styles.light : styles.dark].join(' ')}
-      >
-        dev with ♡ By Eru
-      </code>
-    </div>
+    <a href="https://github.com/Eru-js" target="_blank">
+      <div className="flex justify-center m-2 cursor-pointer border border-solid border-1 border-black dark:border-white">
+        <code className="z-1 p-2 text-xs">
+          dev with ♡ By Eru
+        </code>
+      </div>
+    </a>
   )
 }
 

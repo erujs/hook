@@ -1,7 +1,10 @@
+import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Error from 'next/error'
+import { useTheme } from 'next-themes'
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import { useSelector } from 'react-redux'
 import { getStatus } from '../app/reducer'
 import ProfileCard from '../components/profilecard/profilecard'
@@ -9,6 +12,36 @@ import Eru from '../components/eru/eru'
 
 const Home: NextPage = () => {
   const status = useSelector(getStatus);
+  const { systemTheme, theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const renderThemeChanger = () => {
+    if(!mounted) return null;
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+
+    if (currentTheme === 'dark') {
+      return (
+        <SunIcon
+          className='w-7 h-7'
+          role='button'
+          onClick={() => setTheme('light')}
+        />
+      )
+    } else {
+      return (
+        <MoonIcon
+          className='w-7 h-7'
+          role='button'
+          onClick={() => setTheme('dark')}
+        />
+      )
+    };
+  }
+
 
   let dataRender = () => {
     switch (status) {
@@ -16,11 +49,16 @@ const Home: NextPage = () => {
         return <>Loading ...</>
       case 200:
         return (
-          <div className="flex min-h-screen flex-col items-center justify-center py-2">
+          <div className="flex min-h-screen flex-col items-center justify-center">
             <Head>
               <title>Hook</title>
               <link rel="icon" href="/favicon.ico" />
             </Head>
+
+            <header className='flex w-full mx-auto p-4 sm:p-6 items-center justify-between'>
+              <h1 className='font-bold text-2xl'>HOOK</h1>
+              {renderThemeChanger()}
+            </header>
 
             <main className="flex w-full flex-1 flex-col items-center justify-center text-center">
               <ProfileCard />
