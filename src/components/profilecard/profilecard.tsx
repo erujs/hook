@@ -1,11 +1,17 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link'
 import { BriefcaseIcon, MapPinIcon } from '@heroicons/react/24/outline'
-import { getProfile } from '../../app/reducer';
+import { getUserProfile, userProfile } from '../../app/reducer';
 import ProfileLinks from '../profilelinks/profilelinks'
+import { useEffect } from 'react';
 
 const ProfileCard = () => {
-  const profile = useSelector(getProfile);
+  const profile = useSelector(userProfile);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getUserProfile())
+  }, [])
 
   return (
     <div className="max-w-4xl flex items-center h-auto flex-wrap mx-auto my-32 lg:my-0">
@@ -34,9 +40,11 @@ const ProfileCard = () => {
           </div>
 
           <div className="flex justify-end">
-            <button className="w-full sm:w-auto bg-cyan-700 hover:bg-cyan-900 text-white font-bold py-2 px-4">
-              <Link href="/persona">Find Personas</Link>
-            </button>
+            <Link href="/persona">
+              <button className="w-full sm:w-auto bg-cyan-700 hover:bg-cyan-900 text-white font-bold py-2 px-4">
+                Find Personas
+              </button>
+            </Link>
           </div>
         </div>
       </div>

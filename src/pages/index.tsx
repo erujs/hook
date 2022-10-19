@@ -1,26 +1,28 @@
 import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Error from 'next/error'
 import { useTheme } from 'next-themes'
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
-import { useSelector } from 'react-redux'
-import { getStatus } from '../app/reducer'
+import { checkStatus, getUserProfile } from '../app/reducer'
 import ProfileCard from '../components/profilecard/profilecard'
 import Eru from '../components/eru/eru'
 
 const Home: NextPage = () => {
-  const status = useSelector(getStatus);
+  const status = useSelector(checkStatus);
+  const dispatch = useDispatch()
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    dispatch(getUserProfile())
     setMounted(true);
-  }, []);
+  });
 
   const renderThemeChanger = () => {
-    if(!mounted) return null;
+    if (!mounted) return null;
     const currentTheme = theme === 'system' ? systemTheme : theme;
 
     if (currentTheme === 'dark') {

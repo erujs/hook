@@ -1,8 +1,6 @@
 import { useSelector } from 'react-redux';
-import { getProfile } from '../../app/reducer';
 
 const ProfileLinks = () => {
-  const profile = useSelector(getProfile)
 
   return (
     <>
