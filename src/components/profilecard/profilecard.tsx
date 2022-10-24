@@ -40,7 +40,7 @@ const ProfileCard = () => {
           </div>
 
           <div className="flex justify-end">
-            <Link href="/persona">
+            <Link href="/personas">
               <button className="w-full sm:w-auto bg-cyan-700 hover:bg-cyan-900 text-white font-bold py-2 px-4">
                 Find Personas
               </button>
