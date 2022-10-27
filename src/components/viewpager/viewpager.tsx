@@ -3,9 +3,7 @@ import { useSprings, animated } from '@react-spring/web'
 import useMeasure from 'react-use-measure'
 import { useDrag } from 'react-use-gesture'
 import clamp from 'lodash.clamp'
-
-import Modal from '../modal/modal'
-import Persona from '../persona/persona'
+import Personav from '../personav/personav'
 
 const ViewPager = ({ personas }) => {
   const pages = personas;
@@ -37,8 +35,8 @@ const ViewPager = ({ personas }) => {
     <div ref={ref} className="h-full w-full">
       {props.map(({ x, display, scale }, i) => (
         <animated.div className="absolute w-full h-full will-change-transform" {...bind()} key={i} style={{ display, x }}>
-          <animated.div className="touch-none bg-cover bg-no-repeat bg-center w-full h-full will-change-transform shadow fixed" style={{ scale, backgroundImage: `url(${pages[i]})` }}>
-              <Persona />
+          <animated.div className="touch-none bg-cover bg-no-repeat bg-center w-full h-full will-change-transform shadow" style={{ scale, backgroundImage: `url(${pages[i]})` }}>
+              <Personav />
           </animated.div>
         </animated.div>
       ))}

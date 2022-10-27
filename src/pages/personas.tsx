@@ -13,7 +13,7 @@ const Personas: NextPage = () => {
   }, [])
 
   return (
-    <div className="flex items-center h-screen justify-center">
+    <div className="flex items-center h-full justify-center">
       {personas ? <ViewPager personas={personas} /> : null}
     </div>
   )

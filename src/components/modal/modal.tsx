@@ -39,7 +39,7 @@ const Modal = (props) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-lg transform overflow-hidden p-4 text-left align-middle shadow-2xl transition-all">
+                <Dialog.Panel className="bg-white/75 dark:bg-black/75 w-full max-w-lg transform overflow-hidden p-4 text-left align-middle shadow-2xl transition-all">
                   <Dialog.Title
                     as="h1"
                     className="text-3xl font-bold pt-8 lg:pt-0 lg:mx-0 pb-3 border-b-2 border-cyan-300 flex justify-between"
