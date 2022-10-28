@@ -53,9 +53,9 @@ export const reducer = createSlice({
     shufflePersonas: (state) => {
       let personas = [
         'https://source.unsplash.com/0mN84vxigL0',
-        'https://source.unsplash.com/URn7-JupQ6Q',
-        'https://source.unsplash.com/1dJmkdVuelg',
-        'https://source.unsplash.com/zgC7nqgE7uw',
+        // 'https://source.unsplash.com/URn7-JupQ6Q',
+        // 'https://source.unsplash.com/1dJmkdVuelg',
+        // 'https://source.unsplash.com/zgC7nqgE7uw',
         // 'https://images.pexels.com/photos/62689/pexels-photo-62689.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         // 'https://images.pexels.com/photos/296878/pexels-photo-296878.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         // 'https://images.pexels.com/photos/4016596/pexels-photo-4016596.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
