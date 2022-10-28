@@ -36,7 +36,7 @@ const ViewPager = ({ personas }) => {
       {props.map(({ x, display, scale }, i) => (
         <animated.div className="absolute w-full h-full will-change-transform" {...bind()} key={i} style={{ display, x }}>
           <animated.div className="touch-none bg-cover bg-no-repeat bg-center w-full h-full will-change-transform shadow" style={{ scale, backgroundImage: `url(${pages[i]})` }}>
-              <Personav />
+              {/* <Personav /> */}
           </animated.div>
         </animated.div>
       ))}

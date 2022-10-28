@@ -1,20 +1,22 @@
 import type { NextPage } from "next";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { browsePersonas, shufflePersonas } from "../app/reducer";
-import ViewPager from "../components/viewpager/viewpager";
+import Head from "next/head";
+import { Logo } from "../components/logo/logo";
+import Personav from "../components/personav/personav";
 
 const Personas: NextPage = () => {
-  const personas = useSelector(browsePersonas);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(shufflePersonas())
-  }, [])
-
   return (
-    <div className="flex items-center h-full justify-center">
-      {personas ? <ViewPager personas={personas} /> : null}
+    <div className="">
+      <Head>
+        <title>Personas</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <header className='bg-white/75 dark:bg-black/75 flex w-full mx-auto px-6 lg:px-4 items-center justify-between fixed z-10'>
+        <Logo />
+        {/* {renderThemeChanger()} */}
+      </header>
+
+      <Personav />
     </div>
   )
 }

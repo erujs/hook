@@ -7,6 +7,7 @@ import Error from 'next/error'
 import { useTheme } from 'next-themes'
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import { checkStatus, getUserProfile } from '../app/reducer'
+import { Logo, LogoLoader } from '../components/logo/logo'
 import ProfileCard from '../components/profilecard/profilecard'
 import Eru from '../components/eru/eru'
 
@@ -44,11 +45,12 @@ const Home: NextPage = () => {
     };
   }
 
-
   let dataRender = () => {
     switch (status) {
       case null:
-        return <>Loading ...</>
+        return (
+          <LogoLoader />
+        )
       case 200:
         return (
           <div className="flex min-h-screen flex-col items-center justify-center">
@@ -57,8 +59,8 @@ const Home: NextPage = () => {
               <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <header className='flex w-full mx-auto p-4 sm:p-6 items-center justify-between'>
-              <h1 className='font-bold text-2xl'>HOOK</h1>
+            <header className='flex w-full mx-auto px-6 pb-6 lg:px-4 lg:pb-4 items-center justify-between'>
+              <Logo />
               {renderThemeChanger()}
             </header>
 
