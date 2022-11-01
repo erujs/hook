@@ -27,7 +27,7 @@ const Personav = () => {
     //   <Modal />
     // </nav>
     <>
-      <main className="flex items-center h-screen justify-center">
+      <main className="flex items-center h-full justify-center">
         {personas ? <ViewPager personas={personas} /> : <LogoLoader />}
       </main>
 

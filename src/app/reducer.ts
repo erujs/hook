@@ -52,10 +52,14 @@ export const reducer = createSlice({
     },
     shufflePersonas: (state) => {
       let personas = [
-        'https://source.unsplash.com/0mN84vxigL0',
+        // 'https://source.unsplash.com/0mN84vxigL0',
         // 'https://source.unsplash.com/URn7-JupQ6Q',
         // 'https://source.unsplash.com/1dJmkdVuelg',
         // 'https://source.unsplash.com/zgC7nqgE7uw',
+        'https://source.unsplash.com/random',
+        'https://source.unsplash.com/random',
+        'https://source.unsplash.com/random',
+        'https://source.unsplash.com/random',
 
       ]
       state.personas = personas.sort((a, b) => Math.random() - 0.5)
