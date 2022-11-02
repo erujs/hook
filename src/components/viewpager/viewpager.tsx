@@ -26,8 +26,8 @@ const ViewPager = ({ personas }) => {
       // console.log(index.current)
     }
     api.start(i => {
-      // if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
-      if (i != index.current) return { display: 'none' }
+      if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
+      // if (i != index.current) return { display: 'none' }
       // const x = (i - index.current) * width + (active ? mx : 0)
       const x = (index.current - i)
       console.log(1 - distance / width / 2)
