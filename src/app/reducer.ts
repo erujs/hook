@@ -52,14 +52,17 @@ export const reducer = createSlice({
     },
     shufflePersonas: (state) => {
       let personas = [
-        // 'https://source.unsplash.com/0mN84vxigL0',
-        // 'https://source.unsplash.com/URn7-JupQ6Q',
-        // 'https://source.unsplash.com/1dJmkdVuelg',
-        // 'https://source.unsplash.com/zgC7nqgE7uw',
-        'https://images.pexels.com/photos/62689/pexels-photo-62689.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        'https://images.pexels.com/photos/4016596/pexels-photo-4016596.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        'https://images.pexels.com/photos/351265/pexels-photo-351265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        'https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        'https://source.unsplash.com/0mN84vxigL0',
+        'https://source.unsplash.com/URn7-JupQ6Q',
+        'https://source.unsplash.com/th3rQu0K3aM',
+        'https://source.unsplash.com/zgC7nqgE7uw',
+        'https://source.unsplash.com/-Ez6KyVFp-0',
+        'https://source.unsplash.com/mbECH-OCBUg',
+        'https://source.unsplash.com/R_2e3RG6cys',
+        // 'https://images.pexels.com/photos/62689/pexels-photo-62689.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        // 'https://images.pexels.com/photos/4016596/pexels-photo-4016596.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        // 'https://images.pexels.com/photos/351265/pexels-photo-351265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        // 'https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 
       ]
       state.personas = personas.sort((a, b) => Math.random() - 0.5)

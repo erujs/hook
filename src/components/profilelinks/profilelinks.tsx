@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 
-const ProfileLinks = () => {
-
+export const ProfileLinks = () => {
   return (
     <>
       {/* <!-- Discord --> */}
@@ -69,5 +68,3 @@ const ProfileLinks = () => {
     </>
   )
 }
-
-export default ProfileLinks;
