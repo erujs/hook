@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useSprings, animated } from "@react-spring/web";
 import useMeasure from "react-use-measure";
 import { useDrag } from "react-use-gesture";
@@ -13,10 +13,9 @@ const ViewPager = ({ pages }) => {
   const [props, api] = useSprings(
     pages?.length,
     (i) => ({
-      // x: i * width,
       x: 0,
       scale: width === 0 ? 0 : 1,
-      display: "block",
+      display: i === 0 ? "block" : "none",
     }),
     [width]
   );
@@ -32,19 +31,13 @@ const ViewPager = ({ pages }) => {
         cancel();
       }
       api.start((i) => {
-        // if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
         if (i != index.current) return { display: "none" };
-        // const x = (i - index.current) * width + (active ? mx : 0)
         const x = index.current - i;
         const scale = active ? 1 - distance / width / 2 : 1;
         return { x, scale, display: "block" };
       });
     }
   );
-
-  useEffect(() => {
-    bind();
-  }, []);
 
   return (
     <div ref={ref} className="h-full w-full">
