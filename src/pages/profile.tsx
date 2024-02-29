@@ -39,7 +39,7 @@ const Home: NextPage = () => {
                   <LogoLoader containerClass="hidden group-hover:flex" />
                 </button>
               </Link>
-              <ThemeChanger mounted={true} />
+              <ThemeChanger mounted={mounted} />
             </header>
 
             <main className="flex w-full flex-1 flex-col items-center justify-center text-center">
