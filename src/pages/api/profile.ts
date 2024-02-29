@@ -21,10 +21,10 @@ export default function handler(
 ) {
     const data: Data = {
         "picture": "https://source.unsplash.com/wgDyTXJm-lU",
-        "username": "eru-js",
+        "username": "erujs",
         "occupation": "Software Engineer",
         "location": "Upside Down",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat expedita eum beatae praesentium cumque deleniti rerum necessitatibus quibusdam nesciunt ut culpa ratione, officia fugit possimus harum recusandae nobis quidem architecto?",
+        "description": "Hi! I'm Jerus Aquino",
         "links": [
             {
                 "link": "discord",
@@ -32,7 +32,7 @@ export default function handler(
             },
             {
                 "link": "reddit",
-                "url": "https://www.reddit.com/user/4nonymua"
+                "url": "https://www.reddit.com/user/halfkoreann"
             }
         ],
     }
